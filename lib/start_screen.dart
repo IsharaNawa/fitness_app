@@ -1,3 +1,4 @@
+import 'package:fitness_app/widgets/start_screen_image_circle_container.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
@@ -13,14 +14,7 @@ class StartScreen extends StatelessWidget {
             "FITNESS",
             style: TextStyle(fontSize: 20),
           ),
-          ClipOval(
-            child: Image.asset(
-              'assets/images/bodybuilder.png',
-              width: 150,
-              height: 150,
-              fit: BoxFit.cover,
-            ),
-          ),
+          StartScreenImageCircleContainer(),
           const SizedBox(
             height: 20,
           ),
