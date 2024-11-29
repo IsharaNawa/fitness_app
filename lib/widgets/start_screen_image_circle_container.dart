@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class StartScreenImageCircleContainer extends StatefulWidget {
-  StartScreenImageCircleContainer({super.key});
+  const StartScreenImageCircleContainer({super.key});
 
   @override
   _StartScreenImageCircleContainerState createState() =>
@@ -33,7 +33,7 @@ class _StartScreenImageCircleContainerState
     // Create an AnimationController
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3), // Duration for each pop
+      duration: const Duration(seconds: 3), // Duration for each pop
     );
 
     // Create a Tween to control the scale of the circles
@@ -62,12 +62,11 @@ class _StartScreenImageCircleContainerState
       color: Colors.white,
       child: Stack(
         children: [
-          // Animated main image circle
           Positioned(
             left: (screenWidth - mainImageRadius) / 2,
             top: paddingFromTopToFirstImage,
             child: ScaleTransition(
-              scale: _scaleAnimation, // Apply the scale animation
+              scale: _scaleAnimation,
               child: ClipOval(
                 child: Image.asset(
                   images[0],
@@ -78,7 +77,6 @@ class _StartScreenImageCircleContainerState
               ),
             ),
           ),
-          // Animated other image circles
           Positioned(
             left: (screenWidth - otherImageRadius) / 2,
             top: paddingFromTopToFirstImage + mainImageRadius + 25,

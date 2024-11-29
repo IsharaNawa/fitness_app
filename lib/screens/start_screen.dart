@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:fitness_app/widgets/start_screen_image_circle_container.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,7 +33,7 @@ class StartScreen extends StatelessWidget {
               ),
             ],
           ),
-          StartScreenImageCircleContainer(),
+          const StartScreenImageCircleContainer(),
           Text(
             "Let's Move",
             style: GoogleFonts.lato(
