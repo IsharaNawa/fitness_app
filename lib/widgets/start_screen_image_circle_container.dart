@@ -59,7 +59,7 @@ class _StartScreenImageCircleContainerState
     return Container(
       width: screenWidth,
       height: 500,
-      color: Colors.grey[200],
+      color: Colors.white,
       child: Stack(
         children: [
           // Animated main image circle
