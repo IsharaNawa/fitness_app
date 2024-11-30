@@ -19,11 +19,17 @@ class IntroScreen extends StatelessWidget {
     index = (index + 1) % introScreenModels.length;
 
     Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (ctx) => IntroScreen(
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) => IntroScreen(
           introScreenModel: introScreenModels[index],
           isFadingNeeded: false,
         ),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(
+            opacity: animation,
+            child: child,
+          );
+        },
       ),
     );
   }
