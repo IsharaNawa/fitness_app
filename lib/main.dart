@@ -35,12 +35,12 @@ void main() {
     home: Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-          // child: IntroScreen(
-          //   introScreenModel: models[3],
-          //   isFadingNeeded: false,
-          // ),
-          // child: const StartScreen(),
-          ),
+        // child: IntroScreen(
+        //   introScreenModel: models[3],
+        //   isFadingNeeded: false,
+        // ),
+        child: const StartScreen(),
+      ),
     ),
   ));
 }
