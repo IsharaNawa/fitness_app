@@ -1,4 +1,4 @@
-import 'package:fitness_app/data/intro_screen_models.dart';
+import 'package:fitness_app/data/main_feature_models.dart';
 import 'package:fitness_app/screens/intro_screen.dart';
 import 'package:fitness_app/widgets/start_screen_image_circle_container.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ class StartScreen extends StatelessWidget {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => IntroScreen(
-          introScreenModel: introScreenModels[0],
+          mainFeatureModel: mainFeatureModels[0],
           isFadingNeeded: false,
         ),
       ),

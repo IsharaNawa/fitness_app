@@ -70,6 +70,7 @@ flutter:
     - assets/images/running_girl_with_strip.png
     - assets/images/yoga_girl.png
     - assets/images/app_symbol.png
+    - assets/images/man_dp.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

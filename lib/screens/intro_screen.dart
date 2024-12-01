@@ -1,27 +1,27 @@
-import 'package:fitness_app/data/intro_screen_models.dart';
-import 'package:fitness_app/models/intro_screen_model.dart';
+import 'package:fitness_app/data/main_feature_models.dart';
+import 'package:fitness_app/models/main_feature_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class IntroScreen extends StatelessWidget {
-  final IntroScreenModel introScreenModel;
+  final MainFeatureModel mainFeatureModel;
   final bool isFadingNeeded;
 
   const IntroScreen({
     super.key,
-    required this.introScreenModel,
+    required this.mainFeatureModel,
     required this.isFadingNeeded,
   });
 
   void navigateToNextIntroScreen(BuildContext context) {
-    int index = introScreenModels
-        .indexWhere((model) => model.mainTitle == introScreenModel.mainTitle);
-    index = (index + 1) % introScreenModels.length;
+    int index = mainFeatureModels
+        .indexWhere((model) => model.mainTitle == mainFeatureModel.mainTitle);
+    index = (index + 1) % mainFeatureModels.length;
 
     Navigator.of(context).push(
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) => IntroScreen(
-          introScreenModel: introScreenModels[index],
+          mainFeatureModel: mainFeatureModels[index],
           isFadingNeeded: false,
         ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -47,9 +47,9 @@ class IntroScreen extends StatelessWidget {
               top: -10,
               left: -110,
               child: Image.asset(
-                introScreenModel.getBackgroundImagePath,
+                mainFeatureModel.getBackgroundImagePath,
                 width: 800,
-                height: 1000,
+                height: 1200,
                 fit: BoxFit.cover,
               ),
             ),
@@ -63,7 +63,7 @@ class IntroScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          introScreenModel.getmainTitle,
+                          mainFeatureModel.getmainTitle,
                           textAlign: TextAlign.start,
                           style: GoogleFonts.lato(
                             fontSize: 50,
@@ -75,7 +75,7 @@ class IntroScreen extends StatelessWidget {
                           height: 20,
                         ),
                         Text(
-                          introScreenModel.getDescription,
+                          mainFeatureModel.getDescription,
                           style: GoogleFonts.poppins(
                             fontSize: 15,
                             color: Colors.white,
