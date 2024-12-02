@@ -45,22 +45,43 @@ class DashboardScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            ...mainFeatureModels.map(
-              (model) {
-                return InkWell(
-                  onTap: () {
-                    print(model.dashBoardCardName);
-                  },
-                  child: DashboardCard(
-                    name: model.dashBoardCardName,
-                    imageUrl: model.backgroundImagePath,
-                  ),
-                );
-              },
-            ),
+            /*
+              Uncomment below to use non ListView Option
+             */
+            // const SizedBox(
+            //   height: 30,
+            // ),
+            // ...mainFeatureModels.map(
+            //   (model) {
+            //     return InkWell(
+            //       onTap: () {
+            //         print(model.dashBoardCardName);
+            //       },
+            //       child: DashboardCard(
+            //         name: model.dashBoardCardName,
+            //         imageUrl: model.backgroundImagePath,
+            //       ),
+            //     );
+            //   },
+            // ),
+            Expanded(
+                child: ListView(
+              children: mainFeatureModels.map(
+                (model) {
+                  return Center(
+                    child: InkWell(
+                      onTap: () {
+                        print(model.dashBoardCardName);
+                      },
+                      child: DashboardCard(
+                        name: model.dashBoardCardName,
+                        imageUrl: model.backgroundImagePath,
+                      ),
+                    ),
+                  );
+                },
+              ).toList(),
+            ))
           ],
         ),
       ),
