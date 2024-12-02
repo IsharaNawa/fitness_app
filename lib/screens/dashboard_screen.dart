@@ -3,6 +3,7 @@ import 'package:fitness_app/widgets/dashboard_name_shower.dart';
 import 'package:fitness_app/widgets/dashboard_title_shower.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_app/data/main_feature_models.dart';
+import 'package:flutter/services.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key, required this.userName});
@@ -11,6 +12,8 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(

@@ -3,6 +3,7 @@ import 'package:fitness_app/screens/intro_screen.dart';
 import 'package:fitness_app/widgets/start_screen_image_circle_container.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -20,6 +21,7 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(

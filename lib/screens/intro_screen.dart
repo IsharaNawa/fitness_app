@@ -1,7 +1,9 @@
 import 'package:fitness_app/data/main_feature_models.dart';
 import 'package:fitness_app/models/main_feature_model.dart';
+import 'package:fitness_app/screens/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart';
 
 class IntroScreen extends StatelessWidget {
   final MainFeatureModel mainFeatureModel;
@@ -34,8 +36,17 @@ class IntroScreen extends StatelessWidget {
     );
   }
 
+  void navigateToDashboardScreens(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => DashboardScreen(userName: "Micheal Marshal"),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     return Scaffold(
       body: InkWell(
         onTap: () {
@@ -88,7 +99,9 @@ class IntroScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       FilledButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          navigateToDashboardScreens(context);
+                        },
                         style: ButtonStyle(
                           backgroundColor:
                               const WidgetStatePropertyAll<Color>(Colors.white),
